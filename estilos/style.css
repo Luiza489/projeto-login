@@ -43,7 +43,7 @@ section#login {
 }
 
 section#login > div#imagem {
-    background: #5f2c82 url(../imagens/cachorro-12.jpg) no repeat; 
+    background: #5f2c82 url(../imagens/cachorro-12.jpg); 
     background-size: cover;
     height: 200px;
 }
@@ -56,10 +56,11 @@ section#login > div#formulario {
 div#formulario > h1 {
     text-align: center;
     margin-bottom: 10px;
+    font-size: 10px; /* Added smaller font size */
 }
 
 div#formulario > p {
-    font-size: 0.8em;
+    font-size: 25px;
 }
 
 form > div.campo {
@@ -67,32 +68,55 @@ form > div.campo {
     display: block;
     width: 100%;
     height: 40px;
-    border-radius: 8px;
+    border-radius: 5px;
     margin: 5px 0px;
 }
 
-div.campo > label {
-    display: none;
+div.campo {
+    position: relative;
+    margin-bottom: 1rem;
 }
 
 div.campo > span {
     color: white;
-    background-color: black;
     font-size: 2em;
     width: 40px;
     padding: 5px;
 }
 
 div.campo > input {
-    background-color: #94cfcd;
+    background-color: #ffffff;
     font-size: 1em;
-    width: calc(100% - 44px);
+    width: calc(100% - 45px);
     height: 100%;
-    transform: translateY(12px);
-    transform: translateX(30px);
-    border: 0px;
+    border: 1px solid #5f2c82;
     border-radius: 8px;
     padding: 4px;
+    transform: translateY(-13px);
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+div.campo > input:focus {
+    border-color: #49a09d;
+    box-shadow: 0 0 5px rgba(73, 160, 157, 0.5);
+    outline: none;
+}
+
+div.campo > input:focus-visible {
+    background-color: white;
+    outline: 2px solid #49a09d;
+}
+
+div.campo > label {
+    display: none;
+}
+
+.error-message {
+    color: #dc3545;
+    font-size: 0.8em;
+    position: absolute;
+    bottom: -20px;
+    left: 0;
 }
 
 form > input[type=submit] {
@@ -112,7 +136,10 @@ form > input[type=submit]:hover {
 }
 
 form > a.botao {
-    display: block; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
     text-align: center;
     font-size: 1em;
     width: 100%;
@@ -125,12 +152,4 @@ form > a.botao {
     border-radius: 7px;
     text-decoration: none;
     transition: white .5s, #6cd3cf .5s;
-}
-
-form > a.botao:hover {
-    background-color: #6cd3cf;
-}
-
-form > a.botao > i {
-    font-size: 0.8em;
 }
