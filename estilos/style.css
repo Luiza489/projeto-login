@@ -85,14 +85,14 @@ div.campo > span {
 }
 
 div.campo > input {
-    background-color: #ffffff;
+    background-color: #94cfcd;
     font-size: 1em;
     width: calc(100% - 45px);
     height: 100%;
-    border: 1px solid #5f2c82;
+    border: 2px solid #5f2c82;
     border-radius: 8px;
     padding: 4px;
-    transform: translateY(-13px);
+    transform: translateY(-10px);
     transition: border-color 0.3s, box-shadow 0.3s;
 }
 
